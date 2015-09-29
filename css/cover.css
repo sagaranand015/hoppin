@@ -27,7 +27,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #FFF;
 }
 body {
   color: #fff;
@@ -142,6 +142,9 @@ width:50px;
 height:3px;
 background-color: rgba(0,0,0,.8);
 }
+.nav{
+margin-right:100px;
+}
 h4{
     font-family: Open Sans;
     line-height: 30px;
@@ -164,6 +167,9 @@ p{
 	text-shadow:none;
 	
 	
+}
+#img1_div{
+margin-top:100px;
 }
 
 @media (min-width: 768px) {
@@ -239,6 +245,9 @@ p{
 }
  @media only screen and (max-width: 50.063em) { 
  .phone1{
- height:100px;
+ height:120px;
+ }
+ .nav{
+ margin-right:0px;
  }
  }
