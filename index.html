@@ -25,6 +25,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<script src="js/jquery.scrolly.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script>
+              var wow = new WOW({ scrollContainer: "section"});
+wow.init();
+              </script>
+	<link rel="stylesheet" href="css/animate.css">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/bootstrap.min.js"></script>
@@ -34,7 +40,10 @@
 
                 // hide .navbar first
                 $(".navbar").hide();
-
+				$("#img1").hide();
+				$("#img2").hide();
+				$("#img3").hide();
+				
                 // fade in .navbar
                 $(function () {
                     $(window).scroll(function () {
@@ -45,6 +54,25 @@
                         else {
                             $('.navbar').fadeOut();
                         }
+						if ($(this).scrollTop() > 1000) {
+						$("#img1").fadeIn(700);
+                        }
+						else{
+						$("#img1").fadeOut(700);
+                        }
+						if ($(this).scrollTop() > 1700) {
+						$("#img2").fadeIn(700);
+                        }
+						else{
+						$("#img2").fadeOut(700);
+                        }
+						if ($(this).scrollTop() > 2200) {
+						$("#img3").fadeIn(700);
+                        }
+						else{
+						$("#img3").fadeOut(700);
+                        }
+						
                     });
 
                 }); 
@@ -64,7 +92,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body style="position:initial;">
 
 <div class="site-wrapper" >
     <div class="site-wrapper-inner">
@@ -96,6 +124,7 @@
 								<li><a class="scrolly" href="#about">About Us</a></li>
 								<li><a class="scrolly" href="#services">Our Services</a></li>
 								<li><a class="scrolly" href="#screenshots">Screenshots</a></li>
+                                <li><a class="scrolly" href="#contact">Contact Us</a></li>
                                 
                             </ul>
                         </div><!-- /.navbar-collapse -->
@@ -173,7 +202,7 @@
 <section id="why" style="background-color:white; min-height:700px;">
     <div>
         <div class="col-md-6" style="margin-top:100px;"  >
-            <img src="images/iphones.png" >
+            <img id="img1" src="images/iphones.png" >
         </div>
 
         <div class="col-md-5" style="margin-top:100px;" >
@@ -206,7 +235,7 @@
         </div>
 
         <div class="col-md-6" style="margin-top:150px;">
-            <img src="images/iphones.png" >
+            <img id="img2" src="images/iphones.png" >
         </div>
     </div>
 </section>
@@ -214,7 +243,7 @@
 <section id="services" style="background-color:white; min-height:700px;">
 	<div>
 		<div class="col-md-6" style="margin-top:100px;" >
-			<img src="images/iphones.png" >
+			<img id="img3" src="images/iphones.png" >
 		</div>
 		<div class="col-md-5" style="margin-top:100px;">
 			<h2 style="text-align:left">
@@ -256,7 +285,7 @@
     	</div>
 	</div>
 </section>
-<section id="features" style="min-height:800px; background-color:white;">
+<section id="contact" style="min-height:800px; background-color:white;">
 	<div class="col-md-12" style="margin-top:100px;">
     	<i class="icon-phone" style="font-size: 64px; line-height: 64px; color: #41d8e5"></i>
     	<div class="divider"></div>
