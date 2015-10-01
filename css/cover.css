@@ -145,6 +145,10 @@ background-color: rgba(0,0,0,.8);
 .nav{
 margin-right:100px;
 }
+.logo{
+margin-top: -14%; 
+height:100px;
+}
 h4{
     font-family: Open Sans;
     line-height: 30px;
@@ -259,5 +263,11 @@ margin-top:100px;
  }
  .nav{
  margin-right:0px;
+ }
+ .inner{
+ margin-top:100px;
+ }
+ .logo{
+ margin-top:100px;
  }
  }
