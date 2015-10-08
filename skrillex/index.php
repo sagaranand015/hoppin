@@ -19,7 +19,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- <link href="css/bootstrap.theme.min.css" rel="stylesheet"> -->
-<!-- Custom styles for this template -->
+    <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
