@@ -1,13 +1,14 @@
 <html lang="en">
 <?php 
-$conn =  mysqli_connect('mysql.hostinger.in','u883562062_x','u883562062_x','7696849107');
+
+$conn =  mysqli_connect('ap-cdbr-azure-southeast-a.cloudapp.net','b7f440f92f425e','86548230','hoppindAHTChhCEe');
 if($_REQUEST['p']=='1'){
 	$name = $_REQUEST['name'];
 $email = $_REQUEST['email'];
 $phone = $_REQUEST['phone'];
 $age = $_REQUEST['age'];
 
-$query = "insert into skrillex (name,email,phone,age) values ('$name','$email','$phone','$age')";
+$query = "insert into skrillex(Name,Email,Tel,Age) values ('$name','$email','$phone','$age')";
 mysqli_query($conn,$query);
 
 }
