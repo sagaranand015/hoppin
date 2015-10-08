@@ -1,18 +1,5 @@
 <html lang="en">
-<?php 
 
-$conn =  mysqli_connect('ap-cdbr-azure-southeast-a.cloudapp.net','b7f440f92f425e','86548230','hoppindAHTChhCEe');
-if($_REQUEST['p']=='1'){
-	$name = $_REQUEST['name'];
-$email = $_REQUEST['email'];
-$phone = $_REQUEST['phone'];
-$age = $_REQUEST['age'];
-
-$query = "insert into skrillex(Name,Email,Tel,Age) values ('$name','$email','$phone','$age')";
-mysqli_query($conn,$query);
-
-}
-?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +18,7 @@ mysqli_query($conn,$query);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap.theme.min.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.theme.min.css" rel="stylesheet"> -->
 <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -45,6 +32,41 @@ mysqli_query($conn,$query);
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/bootstrap.min.js"></script>
 	
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			$('#btnSubmit').on('click', function() {
+
+				var email = $('#email').val().trim();
+				var name = $('#name').val().trim();
+				var tel = $('#phone').val().trim();
+				var age = $('#age').val().trim();
+
+				$.ajax({
+					type: "GET",
+					url: "AJAXFunctions.php",
+					data: {
+						no: "1", email: email, name: name, tel: tel, age: age
+					},
+					success: function(response) {
+						alert(response + ". this is ok!");
+						console.log(response);
+					},
+					error: function(err) {
+						console.log(err);
+					},
+					complete: function() {
+						alert("completed!");
+					}
+				});
+
+				return false;
+			});
+
+		});
+
+	</script>
 
 </head>
 
@@ -65,7 +87,7 @@ mysqli_query($conn,$query);
     </div>
 
     	<div class="col-md-12">
-    		<form action="index.php?p=1" method="post">
+    		<form >   <!-- action="insert-form.php" method="post" -->
     		
 	    			<div class="form-group" style="margin-left:20%; margin-right:20%;">
 				    <label for="name">Enter your name</label>
@@ -85,7 +107,10 @@ mysqli_query($conn,$query);
 				    <input type="text" class="form-control" id="age" placeholder="Your Age">
 				    <!-- <p class="help-block">Example block-level help text here.</p> -->
 				  </div>
-					<button type="submit" class="btn btn-default1" style="background:#e92330; color: #fff; border-radius:0px; border:0px; width:100px;" id="submit1">Submit</button>
+					<!-- <input type="submit" class="btn btn-default1" style="background:#e92330; color: #fff; border-radius:0px; border:0px; width:100px;" id="submit1" value="Submit" /> -->
+
+					<button id="btnSubmit" class="btn btn-lg btn-primary btn-block">Submit</button>
+
 					<p style="color:white;" id="result"></p>
 			  </form>
 			
