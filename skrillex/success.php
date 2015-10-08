@@ -57,10 +57,10 @@
 		<h2 class="page-header">
 			Congrats!! 
 		</h2>
-		<br /><br />
+
 		<h3>You have successfully registered. Please wait for sometime before we send you a confirmation mail to your mailbox.</h3>
 
-		<br /><br />
+		<br />
 		<h5>
 			For any queries, please contact us at <code>tech@gethoppin.in</code>. Thank You.
 		</h5>
