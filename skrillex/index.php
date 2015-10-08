@@ -32,9 +32,41 @@
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/bootstrap.min.js"></script>
 	
+    <style type="text/css">
+
+    	#alertMsg {
+        	width: 60%;
+            z-index:999999; 
+            margin: 2% 2% 2% 2%;
+            font-family: boldText;
+            position: fixed;
+        }
+
+        #popup {
+        	width: 60%;
+            z-index:999999; 
+            margin: 2% 2% 2% 2%;    
+            font-family: boldText;
+            position: fixed;
+        }
+
+    </style>
+
 	<script type="text/javascript">
 
 		$(document).ready(function() {
+
+			var alertMsg = $('#alertMsg').fadeOut();
+            var popup = $('#popup').fadeOut();    
+            $('#btnExitPopup').on('click', function() {
+                popup.children('p').remove();
+                popup.fadeOut();
+
+                // to hide the progress bar.
+                $('.progress').fadeOut();
+                return false;
+            });
+			
 
 			$('#insert-form').submit(function() {
 
@@ -43,6 +75,8 @@
 				var tel = $('#phone').val().trim();
 				var age = $('#age').val().trim();
 
+				alertMsg.children('p').remove();
+				alertMsg.append("<p>Please wait while we get everything done to register you...</p>").fadeIn();
 				$.ajax({
 					type: "GET",
 					url: "AJAXFunctions.php",
@@ -50,13 +84,15 @@
 						no: "1", email: email, name: name, tel: tel, age: age
 					},
 					success: function(response) {
-						alert("We have successfully registered you. Thank You.");
+						if(response == "1") {
+							window.location.href = "success.php";
+						}
+						else {
+							alert("Oops! We encountered  an error processing your request. Please try again.");
+						}
 					},
 					error: function(err) {
 						alert("Oops! We encountered  an error processing your request. Please try again.");
-					},
-					complete: function() {
-						
 					}
 				});
 				return false;
@@ -70,18 +106,24 @@
 
 <body style="position:initial;">
 
+	<div id="alertMsg" class="alert alert-warning" role="alert">
+    </div>
+
+    <div id="popup" class="alert alert-danger" role="alert">
+        <button type="button" class="close" id="btnExitPopup" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+
 <section id="register" style="min-height:700px; background-color:#000;">
 
-<div class="col-md-12">
-	<img src="skrillex-logo.png" style="width:300px; margin-top:50px;">
-</div>
+	<div class="col-md-12">
+		<img src="skrillex-logo.png" style="width:300px; margin-top:50px;">
+	</div>
 
     <div  class="col-md-12" style="color: #fff;">
         <div id="feat_div" class="divider"></div>
             <h2 style="color: #fff;">
                 Registration for SKRILLEX Official After Party
             </h2><br><br>
-    
     </div>
 
     	<div class="col-md-12">
@@ -103,13 +145,8 @@
 				  <div class="form-group" style="margin-left:20%; margin-right:20%;">
 				    <label for="age">Enter your Age</label>
 				    <input type="text" class="form-control" id="age" placeholder="Your Age" required>
-				    <!-- <p class="help-block">Example block-level help text here.</p> -->
 				  </div>
-					<!-- <input type="submit" class="btn btn-default1" style="background:#e92330; color: #fff; border-radius:0px; border:0px; width:100px;" id="submit1" value="Submit" /> -->
-
 					<button id="btnSubmit" class="btn btn-default1" style="background:#e92330; color: #fff; border-radius:0px; border:0px; width:100px;">Submit</button>
-
-					<p style="color:white;" id="result"></p>
 			  </form>
 			
 
