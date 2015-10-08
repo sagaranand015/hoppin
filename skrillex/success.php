@@ -39,15 +39,22 @@
 
 	</script>
 
+	<style type="text/css">
+		h1, h2, h3, h4, h5, p {
+			color: #000;
+		}
+
+	</style>
+
 </head>
 
 <body style="position:initial;">
 
-<section id="register" style="background-color:#000; height: 1000px;">
+<section id="register">
 
 	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
 		
-		<h2 class="page-header" style="color: white;">
+		<h2 class="page-header">
 			Congrats!! 
 		</h2>
 		<br /><br />

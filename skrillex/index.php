@@ -50,6 +50,22 @@
             position: fixed;
         }
 
+        #header>img {
+        	height: 45%;
+        	width: 100%;
+        }
+
+        #btnSubmit {
+        	background:#e92330; 
+        	color: #fff; 
+        	border-radius:2px; 
+        	border:1px; 
+        }
+
+        label {
+        	color: #000;
+        }
+
     </style>
 
 	<script type="text/javascript">
@@ -66,7 +82,7 @@
                 $('.progress').fadeOut();
                 return false;
             });
-			
+
 
 			$('#insert-form').submit(function() {
 
@@ -113,46 +129,68 @@
         <button type="button" class="close" id="btnExitPopup" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     </div>
 
-<section id="register" style="min-height:700px; background-color:#000;">
-
-	<div class="col-md-12">
-		<img src="skrillex-logo.png" style="width:300px; margin-top:50px;">
-	</div>
-
-    <div  class="col-md-12" style="color: #fff;">
-        <div id="feat_div" class="divider"></div>
-            <h2 style="color: #fff;">
-                Registration for SKRILLEX Official After Party
-            </h2><br><br>
+    <!-- for the main header logo -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="header">
+    	<img src="images/register-header.jpg" />
     </div>
 
-    	<div class="col-md-12">
-    		<form id="insert-form" >   <!-- action="insert-form.php" method="post" -->
-    		
-	    			<div class="form-group" style="margin-left:20%; margin-right:20%;">
-				    <label for="name">Enter your name</label>
-				    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-				  </div>
-				  <div class="form-group" style="margin-left:20%; margin-right:20%;">
-				    <label for="exampleInputEmail1">Enter your Email address</label>
-    				<input type="email" class="form-control" id="email" placeholder="Your Email Address" required>
-				  </div>
-				  <div class="form-group" style="margin-left:20%; margin-right:20%;">
-				    <label for="phone-num">Enter your Phone Number</label>
-				    <input type="text" class="form-control" id="phone" placeholder="Phone Number" required>
-				    <!-- <p class="help-block">Example block-level help text here.</p> -->
-				  </div>
-				  <div class="form-group" style="margin-left:20%; margin-right:20%;">
-				    <label for="age">Enter your Age</label>
-				    <input type="text" class="form-control" id="age" placeholder="Your Age" required>
-				  </div>
-					<button id="btnSubmit" class="btn btn-default1" style="background:#e92330; color: #fff; border-radius:0px; border:0px; width:100px;">Submit</button>
+
+	<section id="register" style="background-color:#000;">
+
+		<!-- <div class="col-md-12">
+			<img src="skrillex-logo.png" style="width:300px; margin-top:50px;">
+		</div> -->
+
+	    <div  class="col-md-12" >
+	        <div id="feat_div" class="divider"></div>
+	            <h3 style="color: #000;" class="text-center page-header">
+	                Vh1 Supersonic Club Nights presents SKRILLEX Official After Party | Registration
+	            </h3><br><br>
+	    </div>
+
+    	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+    		<form id="insert-form" >  
+    			<table class="table">
+    				<tr>
+    					<td>
+    						<label for="name">Enter your name</label>
+    					</td>
+						<td>
+							<input type="text" class="form-control" id="name" placeholder="Your Name" required>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>
+    						<label for="email">Enter your Email address</label>
+    					</td>
+    					<td>
+    						<input type="email" class="form-control" id="email" placeholder="Your Email Address" required>		
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>
+    						<label for="phone-num">Enter your Phone Number</label>
+    					</td>
+    					<td>
+    						<input type="text" class="form-control" id="phone" placeholder="Phone Number" required>
+    					</td>
+    				</tr>
+					<tr>
+						<td>
+							<label for="age">Enter your Age</label>
+						</td>
+						<td>
+							<input type="text" class="form-control" id="age" placeholder="Your Age" required>
+						</td>
+    				</tr>
+    				<tr>
+    					<td colspan="2">	
+    						<button id="btnSubmit" class="btn btn-lg btn-block">Submit</button>
+    					</td>
+    				</tr>
+    			</table>
 			  </form>
-			
-
     	</div>
-    		
-
-</section>
+	</section>
 </body>
 </html>
