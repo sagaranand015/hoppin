@@ -36,7 +36,7 @@
 
 		$(document).ready(function() {
 
-			$('#btnSubmit').on('click', function() {
+			$('#insert-form').submit(function() {
 
 				var email = $('#email').val().trim();
 				var name = $('#name').val().trim();
@@ -50,17 +50,15 @@
 						no: "1", email: email, name: name, tel: tel, age: age
 					},
 					success: function(response) {
-						alert(response + ". this is ok!");
-						console.log(response);
+						alert("We have successfully registered you. Thank You.");
 					},
 					error: function(err) {
-						console.log(err);
+						alert("Oops! We encountered  an error processing your request. Please try again.");
 					},
 					complete: function() {
-						alert("completed!");
+						
 					}
 				});
-
 				return false;
 			});
 
@@ -87,29 +85,29 @@
     </div>
 
     	<div class="col-md-12">
-    		<form >   <!-- action="insert-form.php" method="post" -->
+    		<form id="insert-form" >   <!-- action="insert-form.php" method="post" -->
     		
 	    			<div class="form-group" style="margin-left:20%; margin-right:20%;">
 				    <label for="name">Enter your name</label>
-				    <input type="text" class="form-control" id="name" placeholder="Your Name">
+				    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
 				  </div>
 				  <div class="form-group" style="margin-left:20%; margin-right:20%;">
 				    <label for="exampleInputEmail1">Enter your Email address</label>
-    				<input type="email" class="form-control" id="email" placeholder="Your Email Address">
+    				<input type="email" class="form-control" id="email" placeholder="Your Email Address" required>
 				  </div>
 				  <div class="form-group" style="margin-left:20%; margin-right:20%;">
 				    <label for="phone-num">Enter your Phone Number</label>
-				    <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+				    <input type="text" class="form-control" id="phone" placeholder="Phone Number" required>
 				    <!-- <p class="help-block">Example block-level help text here.</p> -->
 				  </div>
 				  <div class="form-group" style="margin-left:20%; margin-right:20%;">
 				    <label for="age">Enter your Age</label>
-				    <input type="text" class="form-control" id="age" placeholder="Your Age">
+				    <input type="text" class="form-control" id="age" placeholder="Your Age" required>
 				    <!-- <p class="help-block">Example block-level help text here.</p> -->
 				  </div>
 					<!-- <input type="submit" class="btn btn-default1" style="background:#e92330; color: #fff; border-radius:0px; border:0px; width:100px;" id="submit1" value="Submit" /> -->
 
-					<button id="btnSubmit" class="btn btn-lg btn-primary btn-block">Submit</button>
+					<button id="btnSubmit" class="btn btn-default1" style="background:#e92330; color: #fff; border-radius:0px; border:0px; width:100px;">Submit</button>
 
 					<p style="color:white;" id="result"></p>
 			  </form>
