@@ -129,17 +129,14 @@
         <button type="button" class="close" id="btnExitPopup" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     </div>
 
-    <!-- for the main header logo -->
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="header">
-    	<img src="images/register-header.jpg" />
-    </div>
+	<section id="register">
 
+        <!-- for the main header logo -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="header">
+            <img src="images/register-header.jpg" />
+        </div>
 
-	<section id="register" style="background-color:#000;">
-
-		<!-- <div class="col-md-12">
-			<img src="skrillex-logo.png" style="width:300px; margin-top:50px;">
-		</div> -->
+        <br />
 
 	    <div  class="col-md-12" >
 	        <div id="feat_div" class="divider"></div>
